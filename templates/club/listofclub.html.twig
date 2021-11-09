@@ -1,0 +1,18 @@
+<table border="2">
+<tr>
+<td>id </td>
+<td>name </td>
+<td>@ </td>
+<td>Actions </td>
+</tr>
+
+{%for club in result%}
+<tr>
+<td>{{club.id}}</td>
+<td>{{club.name}}</td>
+<td>{{club.adresse}}</td>
+<td><a href="{{path('delete',{id:club.id})}}">delete</a></td>
+</tr>
+{%endfor%}
+
+</table>

@@ -1,0 +1,10 @@
+{%for formation in formations%}
+
+{%if ref==formation.ref%}
+
+{{formation.ref}}
+{{formation.Titre |upper|lower}}
+{{formation.Description}}
+{{formation.date_debut}}
+{%endif%}
+{%endfor%}

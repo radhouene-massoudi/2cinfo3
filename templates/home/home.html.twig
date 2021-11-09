@@ -1,0 +1,33 @@
+<h1>nb formation</h1>
+{{f|length}}
+<h1>home page</h1>
+{{k}}
+{%  if k=='mahdi' %}
+<h1>bonjour</h1>
+{%endif%}
+{% set x=0%}
+{% for i in f   %}
+{%set x=x + i.nb_participants%}
+{{i.ref}}
+{{i.Titre |upper|lower}}
+{{i.Description}}
+{{i.date_debut}}
+{%if i.nb_participants!=0%}
+<input type="submit" value="participer">
+{%else%}
+<input type="submit" value="test">
+{%endif%}
+<a href="{{path('abc',{'klass':i.ref})}}">Description</a>
+<a href="{{path('detailof',{'ref':i.ref})}}">detail</a>
+{%endfor%}
+<h1>nb tot</h1>
+{{x}}
+{% set max=0%}
+{% for i in f   %}
+{%if i.nb_participants>max%}
+{%set max=i.nb_participants%}
+{%endif%}
+{%endfor%}
+<br>
+<h1>nb max</h1>
+{{max}}
